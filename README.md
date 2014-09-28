@@ -1,6 +1,6 @@
 Asteroids
 =========
-* Version = Alpha 0.0.1
+* Version = Alpha 0.1.0
 * Author = ElGoreLoco
 
 Requirements
