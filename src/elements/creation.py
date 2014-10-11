@@ -31,8 +31,8 @@ class Create:
 
         # speed
         speed = [0, 0]
-        speed[0] = randrange(-6, 6)
-        speed[1] = randrange(-6, 6)
+        speed[0] = randrange(-2, 2)
+        speed[1] = randrange(-2, 2)
 
         # dictionary
         asteroid_properties = {"pos": pos,
