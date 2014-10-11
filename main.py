@@ -3,8 +3,9 @@ import pygame
 import sys
 from pygame.locals import *
 
-import src.building as build
-import src.deletion as delete
+import src.elements.building as build
+import src.elements.deletion as delete
+
 
 pygame.init()
 
