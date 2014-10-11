@@ -5,13 +5,14 @@ from pygame.locals import *
 
 import src.elements.building as build
 import src.elements.deletion as delete
+import src.elements.moving as move
 
 
 pygame.init()
 
 # variables
 windowSize = (256, 128)
-
+count = 0
 
 # files
 bg_if = "textures/elements/bg.jpg"
@@ -46,8 +47,16 @@ while True:
     # create asteroids
     while len(asteroids) < 5:
         build.asteroid()
+
     for i in asteroids:
         screen.blit(asteroid, i["pos"])
+
+    for i in asteroids:
+        if count >= len(asteroids):
+            break
+        asteroids[count] = move.asteroid(i)
+
+
 
     # update display
     pygame.display.update()
