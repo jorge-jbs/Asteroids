@@ -1,0 +1,2 @@
+global WINDOWS_SIZE
+WINDOWS_SIZE = (640, 480)

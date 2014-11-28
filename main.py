@@ -11,6 +11,7 @@ import src.elements.moving as move
 pygame.init()
 
 # variables
+global windowSize
 windowSize = (256, 128)
 count = 0
 
@@ -20,7 +21,7 @@ ast_if = "textures/elements/asteroid.png"
 
 
 # initialization
-screen = pygame.display.set_mode(windowSize, 0, 32)
+display = pygame.display.set_mode(windowSize, 0, 32)
 background = pygame.image.load(bg_if).convert()
 asteroid = pygame.image.load(ast_if).convert_alpha()
 
@@ -42,14 +43,14 @@ while True:
             delete.asteroid()
 
     # background
-    screen.blit(background, (0, 0))
+    display.blit(background, (0, 0))
 
     # create asteroids
     while len(asteroids) < 5:
         build.asteroid()
 
     for i in asteroids:
-        screen.blit(asteroid, i["pos"])
+        display.blit(asteroid, i["pos"])
 
     for i in asteroids:
         if count >= len(asteroids):

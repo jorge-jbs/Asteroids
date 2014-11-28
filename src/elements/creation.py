@@ -19,7 +19,7 @@ class Create:
                                     # la forma del asteroide
 
         # hardness
-        hardness = randrange(1, 5)  # each level of hardness makes the asteroid take more or less shots
+        hardness = randrange(1, 5)  # each levels of hardness makes the asteroid take more or less shots
                                     # to be destroyed
 
                                     # cada nivel de dureza hace que el asteroide
