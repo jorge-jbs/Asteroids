@@ -1,9 +1,10 @@
 #Here elements get added to the general list
 
-from src.elements.creation import Create
-from src.inits.levels.L1.__init__ import asteroids
 
 def asteroid(times=1):
+    from src.elements.creation import Create
+    from src.inits.levels.L1.__init__ import asteroids
+
     create = Create()
 
     for i in range(0, times):
