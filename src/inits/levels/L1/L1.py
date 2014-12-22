@@ -1,36 +1,27 @@
 # imports
-import pygame
-import sys
+import pygame, sys
 from pygame.locals import *
+
+from variables import *
+from Asteroids import display
 
 import src.elements.building as build
 import src.elements.deletion as delete
 import src.elements.moving as move
 
-
-pygame.init()
-
-# variables
-global windowSize
-windowSize = (256, 128)
-count = 0
-
-# files
-bg_if = "textures/elements/bg.jpg"
-ast_if = "textures/elements/asteroid.png"
+clock = pygame.time.Clock()
 
 
-# initialization
-display = pygame.display.set_mode(windowSize, 0, 32)
-background = pygame.image.load(bg_if).convert()
-asteroid = pygame.image.load(ast_if).convert_alpha()
-
+# images
+background = pygame.image.load(bg_i).convert()
+asteroid = pygame.image.load(ast_i).convert_alpha()
 
 # building first asteroids
 asteroids = []
 
-build.asteroid(5)
-
+for i in asteroids:
+    print i
+count = 0
 
 # main loop
 while True:
@@ -53,11 +44,9 @@ while True:
         display.blit(asteroid, i["pos"])
 
     for i in asteroids:
-        if count >= len(asteroids):
-            break
-        asteroids[count] = move.asteroid(i)
+        if count <= len(asteroids):
+            asteroids[count] = move.asteroid(i)
 
-
-
-    # update display
     pygame.display.update()
+
+    clock.tick(60)

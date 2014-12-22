@@ -1,6 +1,6 @@
 # Here the asteroids get their random properties
 
-from src.inits.variables.general import WINDOWS_SIZE
+from src.inits.properties import WINDOWS_SIZE
 
 
 class Create:
@@ -8,7 +8,8 @@ class Create:
         pass
 
     def asteroid(self, asteroid_properties=0):
-        from random import randrange
+        import random
+        randrange = random.randrange
 
         # position
         pos = [0, 0]
@@ -16,7 +17,7 @@ class Create:
         pos[1] = randrange(0, WINDOWS_SIZE[1]+1)
 
         # category
-        category = randrange(0, 2)  # asteroid form
+        category = 0# randrange(0, 2)  # asteroid form
 
                                     # la forma del asteroide
 
@@ -33,8 +34,8 @@ class Create:
 
         # speed
         speed = [0, 0]
-        speed[0] = randrange(-1, 1)
-        speed[1] = randrange(-1, 1)
+        speed[0] = randrange(-1, 1, _int=float)
+        speed[1] = randrange(-1, 1, _int=float)
 
         # dictionary
         asteroid_properties = {"pos": pos,

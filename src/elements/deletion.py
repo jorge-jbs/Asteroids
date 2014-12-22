@@ -4,7 +4,7 @@
 def asteroid(count=0):
     import pygame
     from math import sqrt
-    from main import asteroids
+    from src.inits.levels.L1.L1 import asteroids
 
     mouse_pos = pygame.mouse.get_pos()
 

@@ -1,2 +1,1 @@
-global WINDOWS_SIZE
 WINDOWS_SIZE = (720, 480)
