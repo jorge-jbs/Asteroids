@@ -1,4 +1,8 @@
-#Here elements get deleted
+"""
+This modules deletes the appropriate asteroid from the main asteroid list if the mouse clicks an asteroid.
+This module uses the math module to calculate the distance between the mouse and the asteroid.
+"""
+
 
 from math import sqrt
 

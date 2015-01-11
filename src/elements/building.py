@@ -1,9 +1,12 @@
-#Here elements get added to the general list
+"""
+This module gets the properties of a new asteroid and adds them to the main asteroids list.
+"""
+
+
+from src.elements.creation import Create
 
 
 def asteroid(asteroids, times=1):
-    from src.elements.creation import Create
-
     create = Create()
 
     for i in range(0, times):

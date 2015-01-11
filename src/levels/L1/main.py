@@ -1,4 +1,8 @@
-# imports
+"""
+This is the first level of the game.
+"""
+
+
 import pygame
 import sys
 from pygame.locals import *
@@ -28,6 +32,7 @@ def l1():
             if event.type == QUIT:
                 pygame.quit()
                 sys.exit()
+            # deleting
             if event.type == MOUSEBUTTONDOWN:
                 mouse_pos = pygame.mouse.get_pos()
                 asteroids = delete.asteroid(mouse_pos, asteroids)

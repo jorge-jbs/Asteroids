@@ -1,4 +1,10 @@
-# Here the asteroids get their random properties
+"""
+This module contains all the properties that an asteroid has.
+"""
+
+
+import random
+uniform = random.uniform
 
 from src.levels.properties import WINDOWS_SIZE
 
@@ -8,8 +14,6 @@ class Create:
         pass
 
     def asteroid(self):
-        import random
-        uniform = random.uniform
 
         # position
         pos = [0, 0]
@@ -17,24 +21,30 @@ class Create:
         pos[1] = uniform(0, WINDOWS_SIZE[1]+1)
 
         # category
-        category = 0  # randrange(0, 2) # asteroid form
-                                        # la forma del asteroide
+        category = 0  # randrange(0, 2)
+        """
+        Asteroid form
+        """
 
         # hardness
-        hardness = uniform(1, 5)  # each levels of hardness makes the asteroid take more or less shots
-                                    # to be destroyed
-
-                                    # cada nivel de dureza hace que el asteroide
-                                    # necesite mas o menos disparos para ser destruido o dividido
+        hardness = uniform(1, 5)
+        """
+        This is the number of times the asteroid needs to be fired to be destroyed.
+        """
 
         # pieces
-        pieces = uniform(2, 6)    # the number of little asteroids the main one will divide
-                                    # el numero de pequenos asteroides en los que se dividira el grande
+        pieces = uniform(2, 6)
+        """
+        This is the number of pieces the asteroid will be dived when is destroyed
+        """
 
         # speed
         speed = [0, 0]
         speed[0] = uniform(-1, 1)
         speed[1] = uniform(-1, 1)
+        """
+        The number of pixels the asteroid moves each tick.
+        """
 
         # dictionary
         asteroid_properties = {"pos": pos,

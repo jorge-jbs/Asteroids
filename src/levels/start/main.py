@@ -1,16 +1,23 @@
-def start(level, levels):
-    import pygame
-    import sys
+"""
+This is the start screen of the game.
+"""
 
-    from pygame.locals import QUIT, MOUSEBUTTONDOWN
 
-    from src.levels.init import display
+import pygame
+import sys
 
-    from src.levels.properties import WINDOWS_SIZE
-    from src.levels.start.variables import bg_i, title_i, play_i
+from pygame.locals import QUIT, MOUSEBUTTONDOWN
 
+from src.levels.init import display
+
+from src.levels.properties import WINDOWS_SIZE
+from src.levels.start.variables import bg_i, title_i, play_i
+
+
+def start(screen, screens):
     exit = False
 
+    # loading and transforming of all the components
     bg = pygame.image.load(bg_i).convert()
 
     title = pygame.image.load(title_i).convert_alpha()
@@ -33,15 +40,17 @@ def start(level, levels):
                 pygame.quit()
                 sys.exit()
             if event.type == MOUSEBUTTONDOWN:
-                mou_pos = pygame.mouse.get_pos()
-
+                mouse_pos = pygame.mouse.get_pos()
                 # check play
-                if mou_pos[0] >= play_pos[0] and mou_pos[0] <= play_pos[0]+play_size[0] and mou_pos[1] >= play_pos[1] and mou_pos[1] <= play_pos[1]+play_size[1]:
-                    level = levels[1]
+                if mouse_pos[0] >= play_pos[0] and mouse_pos[0] <= play_pos[0]+play_size[0] and mouse_pos[1] >= play_pos[1] and mouse_pos[1] <= play_pos[1]+play_size[1]:
+                    screen = screens[1]
                     exit = True
+
+        # rendering
         display.blit(bg, (0, 0))
         display.blit(title, title_pos)
         display.blit(play, play_pos)
+
         pygame.display.update()
 
-    return level
+    return screen
