@@ -1,5 +1,6 @@
-def asteroid(moved):
-    moved["pos"][0] += moved["speed"][0]
-    moved["pos"][1] += moved["speed"][1]
+def asteroid(asteroids):
+    for i in asteroids:
+        i["pos"][0] += i["speed"][0]
+        i["pos"][1] += i["speed"][1]
 
-    return moved
+    return asteroids

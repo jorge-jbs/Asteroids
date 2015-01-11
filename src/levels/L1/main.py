@@ -10,9 +10,6 @@ import src.elements.building as build
 import src.elements.deletion as delete
 import src.elements.moving as move
 
-asteroids = []
-count = 0
-
 
 def l1():
     clock = pygame.time.Clock()
@@ -21,30 +18,32 @@ def l1():
     background = pygame.image.load(bg_i).convert()
     asteroid = pygame.image.load(ast_i).convert_alpha()
 
+    global asteroids
+    asteroids = []
+    asteroids = build.asteroid(asteroids, 5)
+
     # main loop
     while True:
-        count = 0
-        # exit
         for event in pygame.event.get():
             if event.type == QUIT:
                 pygame.quit()
                 sys.exit()
             if event.type == MOUSEBUTTONDOWN:
-                delete.asteroid()
+                mouse_pos = pygame.mouse.get_pos()
+                asteroids = delete.asteroid(mouse_pos, asteroids)
 
-        # background
-        display.blit(background, (0, 0))
-
-        # create asteroids
+        # building asteroids
         while len(asteroids) < 5:
-            build.asteroid()
+            asteroids = build.asteroid(asteroids)
+
+        # rendering
+        display.blit(background, (0, 0))
 
         for i in asteroids:
             display.blit(asteroid, i["pos"])
 
-        for i in asteroids:
-            if count <= len(asteroids):
-                asteroids[count] = move.asteroid(i)
+        # moving
+        asteroids = move.asteroid(asteroids)
 
         pygame.display.update()
 

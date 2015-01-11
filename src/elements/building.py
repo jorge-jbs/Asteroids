@@ -1,9 +1,8 @@
 #Here elements get added to the general list
 
 
-def asteroid(times=1):
+def asteroid(asteroids, times=1):
     from src.elements.creation import Create
-    from src.levels.L1.main import asteroids
 
     create = Create()
 
