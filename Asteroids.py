@@ -1,13 +1,10 @@
-import pygame
+from src.levels.init import level, levels
 
-from src.inits.properties import *
+from src.levels.start.main import start
+from src.levels.L1.main import l1
 
-display = pygame.display.set_mode(WINDOWS_SIZE, 0, 32)
-
-'''
-ejecutar primer nivel:
-    background = ...
-    asteroid = ...
-'''
-
-import src.inits.levels.start.start
+if level == levels[0]:
+    level = start(level, levels)
+    print level
+if level == levels[1]:
+    l1()

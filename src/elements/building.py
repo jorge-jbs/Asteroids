@@ -3,7 +3,7 @@
 
 def asteroid(times=1):
     from src.elements.creation import Create
-    from src.inits.levels.L1.L1 import asteroids
+    from src.levels.L1.main import asteroids
 
     create = Create()
 
