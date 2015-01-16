@@ -5,7 +5,7 @@ This module takes the main asteroids list and changes the position of all the as
 
 def asteroid(asteroids):
     for i in asteroids:
-        i["pos"][0] += i["speed"][0]
-        i["pos"][1] += i["speed"][1]
+        i.rect.x += i.speed[0]
+        i.rect.y += i.speed[1]
 
     return asteroids

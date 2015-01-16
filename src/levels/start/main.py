@@ -11,19 +11,19 @@ from pygame.locals import QUIT, MOUSEBUTTONDOWN
 from src.levels.init import display
 
 from src.levels.properties import WINDOWS_SIZE
-from src.levels.start.variables import bg_i, title_i, play_i
+from src.levels.start.variables import bg_if, title_if, play_if
 
 
 def start(screen, screens):
     exit = False
 
     # loading and transforming of all the components
-    bg = pygame.image.load(bg_i).convert()
+    bg = pygame.image.load(bg_if).convert()
 
-    title = pygame.image.load(title_i).convert_alpha()
+    title = pygame.image.load(title_if).convert_alpha()
     title = pygame.transform.scale(title, (title.get_size()[0]*4, title.get_size()[1]*4))
 
-    play = pygame.image.load(play_i).convert_alpha()
+    play = pygame.image.load(play_if).convert_alpha()
     play = pygame.transform.scale(play, (play.get_size()[0]*8, play.get_size()[1]*8))
 
     # sizes
